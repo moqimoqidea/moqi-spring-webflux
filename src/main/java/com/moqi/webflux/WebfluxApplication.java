@@ -10,10 +10,10 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.moqi"})
 @Slf4j
-public class MoqiSpringWebfluxApplication {
+public class WebfluxApplication {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(MoqiSpringWebfluxApplication.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(WebfluxApplication.class, args);
         GreetingClient greetingClient = context.getBean(GreetingClient.class);
         // We need to block for the content here or the JVM might exit before the message is logged
         log.info(">> message = {}", greetingClient.getMessage().block());
